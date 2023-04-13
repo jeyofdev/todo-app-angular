@@ -1,1 +1,17 @@
-// style here
+.container {
+	background: #f0ebeb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 1rem;
+}
+
+.content-box {
+	background: #fff;
+	text-align: center;
+	width: 100%;
+	max-width: 31.25rem; // 500px
+	padding: 1rem;
+	border-radius: 0.625rem;
+}
