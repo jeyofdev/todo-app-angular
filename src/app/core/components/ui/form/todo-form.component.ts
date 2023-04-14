@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { TodoService } from 'src/app/core/services/todo.service';
 import { DarkModeEnum } from 'src/app/core/types/enums';
 
 @Component({
@@ -13,6 +14,8 @@ export class TodoFormComponent implements OnInit {
 	@Input() darkMode!: DarkModeEnum;
 	todoToAdd!: string;
 
+	constructor(private todoService: TodoService) {}
+
 	ngOnInit(): void {
 		this.todoToAdd = '';
 	}
@@ -20,5 +23,6 @@ export class TodoFormComponent implements OnInit {
 	onSubmit(form: NgForm): void {
 		// eslint-disable-next-line no-console
 		console.log(this.todoToAdd, form);
+		this.todoService.postNewTodo(this.todoToAdd);
 	}
 }

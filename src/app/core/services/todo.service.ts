@@ -6,20 +6,24 @@ import { StatusEnum } from '../types/enums';
 	providedIn: 'root',
 })
 export class TodoService {
-	todosList: TodoModel[] = [
-		{
-			id: '1',
-			name: 'react',
-			status: StatusEnum.COMPLETE,
-		},
-		{
-			id: '2',
-			name: 'angular',
-			status: StatusEnum.INCOMPLETE,
-		},
-	];
-
 	getAllTodos(): TodoModel[] {
-		return this.todosList;
+		const storage = localStorage.getItem('todos');
+		return storage ? JSON.parse(storage) : [];
+	}
+
+	postNewTodo(todoName: string): TodoModel[] {
+		const storage = localStorage.getItem('todos');
+		const oldDatas = storage ? JSON.parse(storage) : [];
+		const datas: TodoModel[] = oldDatas;
+
+		datas.push({
+			id: datas.length > 0 ? String(oldDatas.length + 1) : '1',
+			name: todoName,
+			status: StatusEnum.INCOMPLETE,
+		});
+
+		localStorage.setItem('todos', JSON.stringify(datas));
+
+		return this.getAllTodos();
 	}
 }

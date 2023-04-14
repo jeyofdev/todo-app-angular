@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
 		this.title = 'Todo app';
 		this.darkMode = DarkModeEnum.LIGHT;
 		this.todosList = this.todoService.getAllTodos();
+		this.todoService.getAllTodos();
 	}
 
 	OnSwitchDarkMode(): void {
