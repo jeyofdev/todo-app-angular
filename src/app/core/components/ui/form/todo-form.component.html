@@ -1,0 +1,19 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+	<div
+		class="form-group"
+		[class]="class"
+		[ngClass]="{ dark: darkMode === 'dark' }"
+	>
+		<input
+			type="text"
+			class="form-control"
+			name="newTodo"
+			id="newTodo"
+			[placeholder]="'Enter your todo'"
+			[(ngModel)]="todoToAdd"
+		/>
+		<button type="submit" class="btn" [ngClass]="{ dark: darkMode === 'dark' }">
+			Add
+		</button>
+	</div>
+</form>
