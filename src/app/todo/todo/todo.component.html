@@ -1,15 +1,21 @@
 <div class="card" [ngClass]="{ dark: darkMode === 'dark' }">
-	<fa-icon
-		[icon]="icon"
-		class="icon"
-		[ngStyle]="{ color: getColorIcon() }"
-	></fa-icon>
+	<div class="card-body">
+		<fa-icon
+			[icon]="icon"
+			class="icon"
+			[ngStyle]="{ color: getColorIcon() }"
+		></fa-icon>
 
-	<typography
-		[type]="'h3'"
-		[value]="todo.name"
-		[color]="darkMode === 'dark' ? 'white' : 'black'"
-		[ngStyle]="{ marginLeft: '1rem' }"
-	>
-	</typography>
+		<typography
+			[type]="'h3'"
+			[value]="todo.name"
+			[color]="darkMode === 'dark' ? 'white' : 'black'"
+			[ngStyle]="{ marginLeft: '1rem' }"
+		>
+		</typography>
+	</div>
+
+	<button type="button" class="icon-delete-box" (click)="onDelete()">
+		<fa-icon [icon]="iconDelete" class="icon-delete"></fa-icon>
+	</button>
 </div>

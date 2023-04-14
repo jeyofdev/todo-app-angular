@@ -11,7 +11,7 @@ export class TodoService {
 		return storage ? JSON.parse(storage) : [];
 	}
 
-	postNewTodo(todoName: string): TodoModel[] {
+	postNewTodo(todoName: string): void {
 		const storage = localStorage.getItem('todos');
 		const oldDatas = storage ? JSON.parse(storage) : [];
 		const datas: TodoModel[] = oldDatas;
@@ -23,7 +23,12 @@ export class TodoService {
 		});
 
 		localStorage.setItem('todos', JSON.stringify(datas));
+	}
 
-		return this.getAllTodos();
+	deleteTodoById(id: string): void {
+		const todos = this.getAllTodos();
+		const newTodos = todos.filter(t => t.id !== id);
+
+		localStorage.setItem('todos', JSON.stringify(newTodos));
 	}
 }
