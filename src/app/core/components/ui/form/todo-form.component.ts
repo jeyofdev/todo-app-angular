@@ -20,9 +20,8 @@ export class TodoFormComponent implements OnInit {
 		this.todoToAdd = '';
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	onSubmit(form: NgForm): void {
-		// eslint-disable-next-line no-console
-		console.log(this.todoToAdd, form);
-		this.todoService.postNewTodo(this.todoToAdd);
+		this.todoService.postNewTodo(this.todoToAdd).subscribe();
 	}
 }
