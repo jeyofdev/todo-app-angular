@@ -1,5 +1,8 @@
-<div class="container">
-	<div class="content-box">
-		<typography [type]="'h1'" [value]="'todo app'"></typography>
+<div class="container" [ngClass]="{ dark: darkMode === 'dark' }">
+	<div class="content-box" [ngClass]="{ dark: darkMode === 'dark' }">
+		<button type="button" class="btn" (click)="OnSwitchDarkMode()">
+			<fa-icon [icon]="darkModeIcon"></fa-icon>
+		</button>
+		<typography [type]="'h1'" [value]="'todo app'" [color]="darkMode === 'dark' ? 'white' : 'black'"></typography>
 	</div>
 </div>

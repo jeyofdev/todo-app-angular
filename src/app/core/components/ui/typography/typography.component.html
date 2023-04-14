@@ -1,7 +1,7 @@
-<h1 *ngIf="type === 'h1'">{{ value | titlecase }}</h1>
-<h2 *ngIf="type === 'h2'">{{ value | titlecase }}</h2>
-<h3 *ngIf="type === 'h3'">{{ value | titlecase }}</h3>
-<h4 *ngIf="type === 'h4'">{{ value | titlecase }}</h4>
-<h5 *ngIf="type === 'h5'">{{ value | titlecase }}</h5>
-<h6 *ngIf="type === 'h6'">{{ value | titlecase }}</h6>
-<p *ngIf="type === 'p'">{{ value | titlecase }}</p>
+<h1 *ngIf="type === 'h1'" [ngStyle]="{ color }">{{ value | titlecase }}</h1>
+<h2 *ngIf="type === 'h2'" [ngStyle]="{ color }">{{ value | titlecase }}</h2>
+<h3 *ngIf="type === 'h3'" [ngStyle]="{ color }">{{ value | titlecase }}</h3>
+<h4 *ngIf="type === 'h4'" [ngStyle]="{ color }">{{ value | titlecase }}</h4>
+<h5 *ngIf="type === 'h5'" [ngStyle]="{ color }">{{ value | titlecase }}</h5>
+<h6 *ngIf="type === 'h6'" [ngStyle]="{ color }">{{ value | titlecase }}</h6>
+<p *ngIf="type === 'p'" [ngStyle]="{ color }">{{ value | titlecase }}</p>

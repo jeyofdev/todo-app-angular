@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TypographyComponent {
 	@Input() value!: string;
-
 	@Input() type!: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+	@Input() color!: string;
 }
