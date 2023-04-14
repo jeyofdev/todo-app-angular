@@ -12,3 +12,8 @@ export enum TypographyEnum {
 	H6 = 'h6',
 	P = 'p',
 }
+
+export enum StatusEnum {
+	COMPLETE = 'complete',
+	INCOMPLETE = 'incomplete',
+}
