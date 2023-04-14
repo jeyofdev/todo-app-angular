@@ -7,6 +7,7 @@ import { TypographyComponent } from './core/components/ui/typography/typography.
 import { DarkModeButtonComponent } from './core/components/ui/dark-mode-button/dark-mode-button.component';
 import { TodoFormComponent } from './core/components/ui/form/todo-form.component';
 import { FormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo/todo.component';
 
 @NgModule({
 	// eslint-disable-next-line prettier/prettier
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 		TypographyComponent,
 		DarkModeButtonComponent,
 		TodoFormComponent,
+		TodoComponent,
 	],
 	imports: [BrowserModule, FontAwesomeModule, FormsModule],
 	providers: [],

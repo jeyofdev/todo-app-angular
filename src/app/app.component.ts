@@ -1,7 +1,7 @@
+import { TodoModel } from './core/models/todo.model';
 import { Component, OnInit } from '@angular/core';
-// import { IconDefinition, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { DarkModeEnum } from './core/types/enums';
-import { TodoService } from './todo.service';
+import { TodoService } from './core/services/todo.service';
 
 @Component({
 	selector: 'app-root',
@@ -11,15 +11,14 @@ import { TodoService } from './todo.service';
 export class AppComponent implements OnInit {
 	title!: string;
 	darkMode!: DarkModeEnum;
+	todosList!: TodoModel[];
 
 	constructor(private todoService: TodoService) {}
 
 	ngOnInit(): void {
 		this.title = 'Todo app';
 		this.darkMode = DarkModeEnum.LIGHT;
-
-		// eslint-disable-next-line no-console
-		console.log(this.todoService.getAllTodos());
+		this.todosList = this.todoService.getAllTodos();
 	}
 
 	OnSwitchDarkMode(): void {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TodoModel } from './core/models/todo.model';
-import { StatusEnum } from './core/types/enums';
+import { TodoModel } from '../models/todo.model';
+import { StatusEnum } from '../types/enums';
 
 @Injectable({
 	providedIn: 'root',
