@@ -4,8 +4,10 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
 	faCircleCheck,
 	faCircleXmark,
+	faTrashRestoreAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { TodoModel } from 'src/app/core/models/todo.model';
+import { TodoService } from 'src/app/core/services/todo.service';
 import { DarkModeEnum, StatusEnum } from 'src/app/core/types/enums';
 
 @Component({
@@ -16,12 +18,21 @@ import { DarkModeEnum, StatusEnum } from 'src/app/core/types/enums';
 export class TodoComponent implements OnInit {
 	@Input() todo!: TodoModel;
 	@Input() darkMode!: DarkModeEnum;
+	@Input() iconDelete!: IconDefinition;
 	icon!: IconDefinition;
 	color!: string;
+
+	constructor(private todoService: TodoService) {}
 
 	ngOnInit(): void {
 		this.icon =
 			this.todo.status === StatusEnum.COMPLETE ? faCircleCheck : faCircleXmark;
+
+		this.iconDelete = faTrashRestoreAlt;
+	}
+
+	onDelete(): void {
+		this.todoService.deleteTodoById(this.todo.id);
 	}
 
 	getColorIcon(): string {
