@@ -1,3 +1,4 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,7 +7,7 @@ import { TypographyComponent } from './core/components/ui/typography/typography.
 
 @NgModule({
 	declarations: [AppComponent, TypographyComponent],
-	imports: [BrowserModule],
+	imports: [BrowserModule, FontAwesomeModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

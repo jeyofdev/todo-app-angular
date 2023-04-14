@@ -5,6 +5,10 @@
 	align-items: center;
 	min-height: 100vh;
 	padding: 1rem;
+
+	&.dark {
+		background: #353030;
+	}
 }
 
 .content-box {
@@ -14,4 +18,12 @@
 	max-width: 31.25rem; // 500px
 	padding: 1rem;
 	border-radius: 0.625rem;
+
+	&.dark {
+		background: #403c3c;
+	}
+}
+
+.btn {
+	cursor: pointer;
 }
