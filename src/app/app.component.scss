@@ -12,10 +12,7 @@
 }
 
 .content-box {
-	display: flex;
-	justify-content: space-between;
 	background: #fff;
-	text-align: center;
 	width: 100%;
 	max-width: 31.25rem; // 500px
 	padding: 1rem;
@@ -24,4 +21,9 @@
 	&.dark {
 		background: #403c3c;
 	}
+}
+
+.content-top-box {
+	display: flex;
+	justify-content: space-between;
 }

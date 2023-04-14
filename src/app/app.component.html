@@ -1,14 +1,18 @@
 <div class="container" [ngClass]="{ dark: darkMode === 'dark' }">
 	<div class="content-box" [ngClass]="{ dark: darkMode === 'dark' }">
-		<typography
-			[type]="'h1'"
-			[value]="'todo app'"
-			[color]="darkMode === 'dark' ? 'white' : 'black'"
-		></typography>
+		<div class="content-top-box">
+			<typography
+				[type]="'h1'"
+				[value]="'todo app'"
+				[color]="darkMode === 'dark' ? 'white' : 'black'"
+			></typography>
 
-		<dark-mode-button
-			[darkMode]="darkMode"
-			(icon)="OnSwitchDarkMode()"
-		></dark-mode-button>
+			<dark-mode-button
+				[darkMode]="darkMode"
+				(icon)="OnSwitchDarkMode()"
+			></dark-mode-button>
+		</div>
+
+		<todo-form [class]="'mt-4'" [darkMode]="darkMode"></todo-form>
 	</div>
 </div>
