@@ -15,7 +15,25 @@
 
 		<todo-form [class]="'mt-4'" [darkMode]="darkMode"></todo-form>
 
-		<div *ngFor="let todo of todosList$ | async" class="list">
+		<div class="filter-icons">
+			<button type="button" class="btn" (click)="onFilteredList(null)">
+				<fa-icon [icon]="iconAll" class="filter-icon-item info"></fa-icon>
+			</button>
+			<button type="button" class="btn" (click)="onFilteredList('incomplete')">
+				<fa-icon
+					[icon]="iconNotCompleted"
+					class="filter-icon-item danger"
+				></fa-icon>
+			</button>
+			<button type="button" class="btn" (click)="onFilteredList('complete')">
+				<fa-icon
+					[icon]="iconCompleted"
+					class="filter-icon-item success"
+				></fa-icon>
+			</button>
+		</div>
+
+		<div *ngFor="let todo of todosListFiltered$ | async" class="list">
 			<todo [todo]="todo" [darkMode]="darkMode"></todo>
 		</div>
 	</div>
