@@ -1,34 +1,36 @@
+/* eslint-disable no-console */
+/* eslint-disable prettier/prettier */
+import { Observable, map, switchMap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { TodoModel } from '../models/todo.model';
 import { StatusEnum } from '../types/enums';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class TodoService {
-	getAllTodos(): TodoModel[] {
-		const storage = localStorage.getItem('todos');
-		return storage ? JSON.parse(storage) : [];
+	constructor(private httpClient: HttpClient) {}
+
+	getAllTodos(): Observable<TodoModel[]> {
+		return this.httpClient.get<TodoModel[]>('http://localhost:3000/todos');
 	}
 
-	postNewTodo(todoName: string): void {
-		const storage = localStorage.getItem('todos');
-		const oldDatas = storage ? JSON.parse(storage) : [];
-		const datas: TodoModel[] = oldDatas;
-
-		datas.push({
-			id: datas.length > 0 ? String(oldDatas.length + 1) : '1',
-			name: todoName,
-			status: StatusEnum.INCOMPLETE,
-		});
-
-		localStorage.setItem('todos', JSON.stringify(datas));
+	postNewTodo(todoName: string): Observable<TodoModel> {
+		return this.getAllTodos().pipe(
+			map(sortedTodos => sortedTodos[sortedTodos.length - 1]),
+			map(lastTodo => ({
+				id: String(Number(lastTodo.id) + 1),
+				name: todoName,
+				status: StatusEnum.INCOMPLETE,
+			})),
+			switchMap(newTodo =>
+				this.httpClient.post<TodoModel>('http://localhost:3000/todos', newTodo),
+			),
+		);
 	}
 
-	deleteTodoById(id: string): void {
-		const todos = this.getAllTodos();
-		const newTodos = todos.filter(t => t.id !== id);
-
-		localStorage.setItem('todos', JSON.stringify(newTodos));
+	deleteTodoById(id: string): Observable<boolean> {
+		return this.httpClient.delete<boolean>(`http://localhost:3000/todos/${id}`);
 	}
 }

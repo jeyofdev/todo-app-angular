@@ -2,6 +2,7 @@ import { TodoModel } from './core/models/todo.model';
 import { Component, OnInit } from '@angular/core';
 import { DarkModeEnum } from './core/types/enums';
 import { TodoService } from './core/services/todo.service';
+import { Observable } from 'rxjs';
 
 @Component({
 	selector: 'app-root',
@@ -11,14 +12,14 @@ import { TodoService } from './core/services/todo.service';
 export class AppComponent implements OnInit {
 	title!: string;
 	darkMode!: DarkModeEnum;
-	todosList!: TodoModel[];
+	todosList$!: Observable<TodoModel[]>;
 
 	constructor(private todoService: TodoService) {}
 
 	ngOnInit(): void {
 		this.title = 'Todo app';
 		this.darkMode = DarkModeEnum.LIGHT;
-		this.todosList = this.todoService.getAllTodos();
+		this.todosList$ = this.todoService.getAllTodos();
 		this.todoService.getAllTodos();
 	}
 

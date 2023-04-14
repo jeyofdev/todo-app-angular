@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Component, Input, OnInit } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -32,7 +31,7 @@ export class TodoComponent implements OnInit {
 	}
 
 	onDelete(): void {
-		this.todoService.deleteTodoById(this.todo.id);
+		this.todoService.deleteTodoById(this.todo.id).subscribe();
 	}
 
 	getColorIcon(): string {

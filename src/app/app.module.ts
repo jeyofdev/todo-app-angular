@@ -1,6 +1,7 @@
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TypographyComponent } from './core/components/ui/typography/typography.component';
@@ -10,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo/todo.component';
 
 @NgModule({
-	// eslint-disable-next-line prettier/prettier
 	declarations: [
 		AppComponent,
 		TypographyComponent,
@@ -18,7 +18,7 @@ import { TodoComponent } from './todo/todo/todo.component';
 		TodoFormComponent,
 		TodoComponent,
 	],
-	imports: [BrowserModule, FontAwesomeModule, FormsModule],
+	imports: [BrowserModule, FontAwesomeModule, FormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
