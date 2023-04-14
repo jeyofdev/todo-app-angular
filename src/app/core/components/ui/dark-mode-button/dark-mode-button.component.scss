@@ -1,0 +1,15 @@
+.btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.icon {
+	color: #403c3c;
+	font-size: 1.25rem;
+
+	&.dark {
+		color: #fff;
+		font-size: 1.25rem;
+	}
+}

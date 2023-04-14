@@ -1,0 +1,8 @@
+<button type="button" class="btn">
+	<fa-icon
+		[icon]="darkModeIcon"
+		(click)="onClick()"
+		class="icon"
+		[ngClass]="{ dark: darkMode === 'dark' }"
+	></fa-icon>
+</button>
