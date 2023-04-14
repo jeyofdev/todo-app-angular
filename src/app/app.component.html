@@ -14,5 +14,9 @@
 		</div>
 
 		<todo-form [class]="'mt-4'" [darkMode]="darkMode"></todo-form>
+
+		<div *ngFor="let todo of todosList" class="list">
+			<todo [todo]="todo" [darkMode]="darkMode"></todo>
+		</div>
 	</div>
 </div>

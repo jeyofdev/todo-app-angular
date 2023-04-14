@@ -1,0 +1,16 @@
+.card {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: #f0ebeb;
+	padding: 1rem;
+	border-radius: 0.625rem;
+
+	&.dark {
+		background: #565050;
+	}
+}
+
+.icon {
+	font-size: 1.25rem;
+}
