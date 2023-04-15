@@ -9,6 +9,7 @@ import { DarkModeButtonComponent } from './core/components/ui/dark-mode-button/d
 import { TodoFormComponent } from './core/components/ui/form/todo-form.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo/todo.component';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
 
 @NgModule({
 	declarations: [
@@ -17,6 +18,7 @@ import { TodoComponent } from './todo/todo/todo.component';
 		DarkModeButtonComponent,
 		TodoFormComponent,
 		TodoComponent,
+		TodoListComponent,
 	],
 	imports: [BrowserModule, FontAwesomeModule, FormsModule, HttpClientModule],
 	providers: [],
