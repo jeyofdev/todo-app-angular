@@ -20,5 +20,10 @@
 </div>
 
 <div *ngFor="let todo of todosListFiltered$ | async" class="list">
-	<todo [todo]="todo" [darkMode]="darkMode" (delete)="onDelete($event)"></todo>
+	<todo
+		[todo]="todo"
+		[darkMode]="darkMode"
+		(update)="onUpdateStatus($event)"
+		(delete)="onDelete($event)"
+	></todo>
 </div>

@@ -10,7 +10,12 @@
 			[type]="'h3'"
 			[value]="todo.name"
 			[color]="darkMode === 'dark' ? 'white' : 'black'"
-			[ngStyle]="{ marginLeft: '1rem' }"
+			[ngStyle]="{
+				marginLeft: '1rem',
+				cursor: 'pointer',
+				textDecoration: todo.status === 'incomplete' ? 'line-through' : 'none'
+			}"
+			(click)="onUpdate()"
 		>
 		</typography>
 	</div>

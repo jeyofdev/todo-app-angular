@@ -16,6 +16,12 @@ export class TodoService {
 		return this.httpClient.get<TodoModel[]>('http://localhost:3000/todos');
 	}
 
+	getTodoById(todoId: string): Observable<TodoModel> {
+		return this.httpClient.get<TodoModel>(
+			`http://localhost:3000/todos/${todoId}`,
+		);
+	}
+
 	postNewTodo(todoName: string): Observable<TodoModel> {
 		return this.getAllTodos().pipe(
 			map(sortedTodos => sortedTodos[sortedTodos.length - 1]),
@@ -26,6 +32,24 @@ export class TodoService {
 			})),
 			switchMap(newTodo =>
 				this.httpClient.post<TodoModel>('http://localhost:3000/todos', newTodo),
+			),
+		);
+	}
+
+	updateStatusTodo(todoId: string): Observable<TodoModel> {
+		return this.getTodoById(todoId).pipe(
+			map(todo => ({
+				...todo,
+				status:
+					todo.status === StatusEnum.INCOMPLETE
+						? StatusEnum.COMPLETE
+						: StatusEnum.INCOMPLETE,
+			})),
+			switchMap(updatedToto =>
+				this.httpClient.put<TodoModel>(
+					`http://localhost:3000/todos/${todoId}`,
+					updatedToto,
+				),
 			),
 		);
 	}
