@@ -1,24 +1,9 @@
 {
-  "todos": [
-    {
-      "id": "1",
-      "name": "React",
-      "status": "complete"
-    },
-    {
-      "id": "2",
-      "name": "ctgc",
-      "status": "complete"
-    },
-    {
-      "id": "4",
-      "name": "èyutgèuyghbèu",
-      "status": "incomplete"
-    },
-    {
-      "id": "5",
-      "name": "gbujyhnu",
-      "status": "complete"
-    }
-  ]
+	"todos": [
+		{
+			"id": "1",
+			"name": "React",
+			"status": "complete"
+		}
+	]
 }
