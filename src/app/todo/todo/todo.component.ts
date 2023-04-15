@@ -18,6 +18,7 @@ export class TodoComponent implements OnInit {
 	@Input() darkMode!: DarkModeEnum;
 	@Input() iconDelete!: IconDefinition;
 	@Output() delete = new EventEmitter<string>();
+	@Output() update = new EventEmitter<string>();
 
 	icon!: IconDefinition;
 	color!: string;
@@ -27,6 +28,10 @@ export class TodoComponent implements OnInit {
 			this.todo.status === StatusEnum.COMPLETE ? faCircleCheck : faCircleXmark;
 
 		this.iconDelete = faTrashRestoreAlt;
+	}
+
+	onUpdate(): void {
+		this.update.emit(this.todo.id);
 	}
 
 	onDelete(): void {

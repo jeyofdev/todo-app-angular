@@ -48,6 +48,13 @@ export class TodoListComponent implements OnInit {
 		});
 	}
 
+	onUpdateStatus(todoId: string): void {
+		this.todoService.updateStatusTodo(todoId).subscribe(() => {
+			this.todosList$ = this.todoService.getAllTodos();
+			this.todosListFiltered$ = this.todosList$;
+		});
+	}
+
 	onDelete(todoId: string): void {
 		this.todoService.deleteTodoById(todoId).subscribe(() => {
 			this.todosList$ = this.todoService.getAllTodos();
