@@ -11,9 +11,28 @@
 			id="newTodo"
 			[placeholder]="'Enter your todo'"
 			[(ngModel)]="todoToAdd"
+			required
+			minlength="4"
+			#title="ngModel"
 		/>
-		<button type="submit" class="btn" [ngClass]="{ dark: darkMode === 'dark' }">
+		<button
+			type="submit"
+			class="btn"
+			[ngClass]="{ dark: darkMode === 'dark' }"
+			[disabled]="!form.valid"
+		>
 			Add
 		</button>
+	</div>
+
+	<div *ngIf="title.invalid && (title.dirty || title.touched)">
+		<alert
+			[message]="'The title is required'"
+			*ngIf="title.errors?.['required']"
+		></alert>
+		<alert
+			[message]="'The name of the todo must contain at least 4 characters'"
+			*ngIf="title.errors?.['minlength']"
+		></alert>
 	</div>
 </form>
