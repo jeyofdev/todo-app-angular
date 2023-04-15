@@ -1,10 +1,9 @@
+/* eslint-disable @typescript-eslint/lines-between-class-members */
 import { StatusEnum } from '../types/enums';
 
 export class TodoModel {
 	id!: string;
-
 	name!: string;
-
 	status!: StatusEnum;
 
 	constructor(id: string, name: string, status: StatusEnum) {

@@ -32,7 +32,6 @@ export class TodoListComponent implements OnInit {
 
 	onFilteredList(status: string | null): void {
 		if (status) {
-			// eslint-disable-next-line no-console
 			this.todosListFiltered$ = this.todosList$.pipe(
 				map(todos => todos.filter(t => t.status === status)),
 			);

@@ -19,11 +19,13 @@
 	</button>
 </div>
 
-<div *ngFor="let todo of todosListFiltered$ | async" class="list">
-	<todo
-		[todo]="todo"
-		[darkMode]="darkMode"
-		(update)="onUpdateStatus($event)"
-		(delete)="onDelete($event)"
-	></todo>
+<div class="list" [ngClass]="{ dark: darkMode === 'dark' }">
+	<div *ngFor="let todo of todosListFiltered$ | async">
+		<todo
+			[todo]="todo"
+			[darkMode]="darkMode"
+			(update)="onUpdateStatus($event)"
+			(delete)="onDelete($event)"
+		></todo>
+	</div>
 </div>

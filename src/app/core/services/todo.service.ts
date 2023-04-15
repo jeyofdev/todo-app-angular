@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable prettier/prettier */
 import { Observable, map, switchMap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { TodoModel } from '../models/todo.model';
