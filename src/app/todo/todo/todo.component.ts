@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
 	faCircleCheck,
@@ -6,7 +6,6 @@ import {
 	faTrashRestoreAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { TodoModel } from 'src/app/core/models/todo.model';
-import { TodoService } from 'src/app/core/services/todo.service';
 import { DarkModeEnum, StatusEnum } from 'src/app/core/types/enums';
 
 @Component({
@@ -18,10 +17,10 @@ export class TodoComponent implements OnInit {
 	@Input() todo!: TodoModel;
 	@Input() darkMode!: DarkModeEnum;
 	@Input() iconDelete!: IconDefinition;
+	@Output() delete = new EventEmitter<string>();
+
 	icon!: IconDefinition;
 	color!: string;
-
-	constructor(private todoService: TodoService) {}
 
 	ngOnInit(): void {
 		this.icon =
@@ -31,7 +30,7 @@ export class TodoComponent implements OnInit {
 	}
 
 	onDelete(): void {
-		this.todoService.deleteTodoById(this.todo.id).subscribe();
+		this.delete.emit(this.todo.id);
 	}
 
 	getColorIcon(): string {

@@ -1,24 +1,14 @@
 {
-  "todos": [
-    {
-      "id": "1",
-      "name": "React",
-      "status": "complete"
-    },
-    {
-      "id": "2",
-      "name": "Angular",
-      "status": "incomplete"
-    },
-    {
-      "id": "3",
-      "name": "yhtgyh",
-      "status": "incomplete"
-    },
-    {
-      "id": "4",
-      "name": "ftrftgrftg",
-      "status": "incomplete"
-    }
-  ]
+	"todos": [
+		{
+			"id": "1",
+			"name": "React",
+			"status": "complete"
+		},
+		{
+			"id": "2",
+			"name": "Angular",
+			"status": "incomplete"
+		}
+	]
 }

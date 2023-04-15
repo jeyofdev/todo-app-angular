@@ -20,7 +20,7 @@ export class TodoService {
 		return this.getAllTodos().pipe(
 			map(sortedTodos => sortedTodos[sortedTodos.length - 1]),
 			map(lastTodo => ({
-				id: String(Number(lastTodo.id) + 1),
+				id: lastTodo ? String(Number(lastTodo.id) + 1) : '1',
 				name: todoName,
 				status: StatusEnum.INCOMPLETE,
 			})),
