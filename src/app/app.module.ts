@@ -10,6 +10,7 @@ import { TodoFormComponent } from './core/components/ui/form/todo-form.component
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo/todo.component';
 import { TodoListComponent } from './todo/todo-list/todo-list.component';
+import { AlertComponent } from './core/components/ui/alert/alert.component';
 
 @NgModule({
 	declarations: [
@@ -19,6 +20,7 @@ import { TodoListComponent } from './todo/todo-list/todo-list.component';
 		TodoFormComponent,
 		TodoComponent,
 		TodoListComponent,
+		AlertComponent,
 	],
 	imports: [BrowserModule, FontAwesomeModule, FormsModule, HttpClientModule],
 	providers: [],

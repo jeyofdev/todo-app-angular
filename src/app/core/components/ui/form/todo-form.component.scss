@@ -29,12 +29,18 @@
 .btn {
 	padding: 0.75rem 1.5rem;
 	background-color: #f0ebeb;
+	color: #322e2e;
 	border: none;
 	border-radius: 0.625rem;
 	font-size: 1rem;
 
 	&.dark {
 		background: #353030;
+		color: #dad4d4;
+	}
+
+	&:disabled {
+		background-color: #f0ebeb5b;
 		color: #dad4d4;
 	}
 }
