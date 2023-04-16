@@ -34,7 +34,7 @@ Install all dependencies :
 
 ### Run Json server
 
-`npm run start`
+`npm run db:start`
 
 ### Run Dev server
 
