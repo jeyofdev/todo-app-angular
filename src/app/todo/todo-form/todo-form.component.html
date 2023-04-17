@@ -25,11 +25,7 @@
 		</button>
 	</div>
 
-	<div *ngIf="title.invalid && (title.dirty || title.touched)">
-		<alert
-			[message]="'The title is required'"
-			*ngIf="title.errors?.['required']"
-		></alert>
+	<div *ngIf="title.invalid">
 		<alert
 			[message]="'The name of the todo must contain at least 4 characters'"
 			*ngIf="title.errors?.['minlength']"
