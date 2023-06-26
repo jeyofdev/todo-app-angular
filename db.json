@@ -4,6 +4,16 @@
       "id": "1",
       "name": "React",
       "status": "complete"
+    },
+    {
+      "id": "2",
+      "name": "Angular",
+      "status": "complete"
+    },
+    {
+      "id": "3",
+      "name": "VueJS",
+      "status": "incomplete"
     }
   ]
 }

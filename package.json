@@ -1,5 +1,5 @@
 {
-	"name": "starter-angular-eslint",
+	"name": "todo-app-angular",
 	"version": "1.0.0",
 	"scripts": {
 		"ng": "ng",
@@ -15,7 +15,7 @@
 	"private": true,
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/jeyofdev/starter-angular-eslint.git"
+		"url": "git+https://github.com/jeyofdev/todo-app-angular.git"
 	},
 	"keywords": [
 		"javascript",
@@ -29,7 +29,7 @@
 	"author": "jeyofdev <jgregoire.pro@gmail.com>",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/jeyofdev/starter-angular-eslint.git/issues"
+		"url": "https://github.com/jeyofdev/todo-app-angular/issues"
 	},
 	"dependencies": {
 		"@angular/animations": "^15.2.0",
