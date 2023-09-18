@@ -1,4 +1,4 @@
-# Starter Angular application
+# todo app angular
 
 My first project (a simple todo app) based on my self-learning of the Angular js framework.
 
